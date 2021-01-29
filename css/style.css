@@ -7,7 +7,7 @@
 }
 body {
   font-family: "Roboto", sans-serif;
-  background: url("images/bg.png");
+  background: url("../images/bg.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
@@ -68,10 +68,23 @@ a.active {
 }
 .plus-minus-btn {
   color: #3352f2;
-  font-size: 30px;
-  padding: 2px;
-  margin-top: 10px;
+  background: #ffffff;
+  line-height: 30px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-top: 20px;
   word-spacing: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 1px solid #3352f2;
+  cursor: pointer;
+}
+.plus-minus-btn:focus {
+  outline: none;
 }
 .booking-form .calculations {
   margin: 10px 0;
@@ -116,8 +129,64 @@ a.active {
   color: #fff;
   font-weight: 500;
   background-color: #3352f2;
+  cursor: pointer;
+}
+.btn-style:focus {
+  outline: none;
 }
 .amount {
   display: flex;
   justify-content: space-between;
+}
+#confirmation-area {
+  display: none;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.confirmation {
+  background: #ffffff;
+  width: 1000px;
+
+  margin: 0 auto;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.confirmation .confirmation-content {
+  display: flex;
+  align-items: center;
+}
+.confirmation .confirmation-left {
+  width: 400px;
+}
+.confirmation .confirmation-left img {
+  width: 100%;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.confirmation .confirmation-right {
+  width: 600px;
+  text-align: center;
+}
+.confirmation .confirmation-right h1 {
+  font-size: 60px;
+  color: rgb(55, 156, 63);
+  margin-bottom: 10px;
+}
+.confirmation .confirmation-right h3 {
+  font-size: 30px;
+  color: rgb(54, 54, 112);
+  margin-bottom: 10px;
+}
+.confirmation .confirmation-right h4 {
+  font-size: 25px;
+  color: rgb(54, 54, 112);
+}
+.confirmation .confirmation-right h4 span {
+  color: red;
 }

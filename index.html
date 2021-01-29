@@ -9,13 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <!-- Font-Awesome  -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <!--Header and Menu Section-->
-    <header class="container">
+    <header id="header-area" class="container">
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -27,7 +29,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="main-area" class="main-content container">
         <div class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
@@ -51,21 +53,27 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="first-class-ticket-count" class="inp-style inp-width"  name="" value="0">
                 </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
-                </div>
+                <button onclick="handleTicketCountChange('first', true)" class="plus-minus-btn">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+                <button onclick="handleTicketCountChange('first', false)" class="plus-minus-btn">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
             </div>
             
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="economy-class-ticket-count" class="inp-style inp-width" name="" value="0">
                 </div>
-                <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
-                </div>
+                <button onclick="handleTicketCountChange('economy', true)" class="plus-minus-btn">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+                <button onclick="handleTicketCountChange('economy', false)" class="plus-minus-btn">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
             </div>
             <div class="calculations">
                 <div class="amount">
@@ -73,7 +81,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p>$ <span id="sub-total">00</span></p>
                     </div>
                 </div>
 
@@ -82,7 +90,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p>$ <span id="vat">00</span></p>
                     </div>
                 </div>
                 <hr>
@@ -91,11 +99,11 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p>$ <span id="total">00</span></p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="booking-btn" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
@@ -104,8 +112,20 @@
         </div>
     </main>
 
+    <section id="confirmation-area" class="confirmation">
+        <div class="confirmation-content">
+            <div class="confirmation-left">
+                <img src="images/confirmation.png" alt="confirmation">
+            </div>
+            <div class="confirmation-right">
+                <h1>THANK YOU</h1>
+                <h3>Your booking was submitted successful.</h3>
+                <h4>Payment Total: <span id="show-total">$ 00</span></h4>
+            </div>
+        </div>
+    </section>
     <!--Js Link Here-->
-    <script src="custom.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>
